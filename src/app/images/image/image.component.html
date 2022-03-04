@@ -1,0 +1,28 @@
+<div class="card container p-0">
+    <div class="card-body">
+<form [formGroup]="formTemplate" (submit)="onSubmit(formTemplate.value)">
+    <div class="text-center mb-3">
+    <img [src]="imgSrc" width="100%" height="100%" (click)="fileUploader.click()" id="img-upload">
+</div>
+<div class="form-group mb-3">
+    <label>Odaberi sliku</label>
+    <input type="file" class="form-control" #fileUploader formControlName="imgUrl" (change)="showPreview($event)">
+    <div class="text-danger" *ngIf="isSubmitted && formControls['imgUrl']errors['required']">Ubaci sliku</div>
+</div>
+<div class="form-group mb-3">
+    <input class="form-control" formControlName="caption" placeholder="Naslov">
+    <div class="text-danger" *ngIf="isSubmitted && formControls['imgUrl']errors['required']">Upiši ime slike</div>
+</div>
+<div class="form-group mb-3">
+    <select class="form-control" formControlName="category">
+        <option value="Animal" selected>Životinja</option>
+        <option value="Vehicle">Automobil</option>
+        <option value="Bird">Ptica</option>
+    </select>
+</div>
+<div class="form-group d-flex justify-content-end">
+    <button type="submit" class="btn btn-success">Potvrdi</button>
+</div>
+</form>
+    </div>
+</div>
