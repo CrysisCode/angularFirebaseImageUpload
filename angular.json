@@ -109,5 +109,8 @@
       }
     }
   },
-  "defaultProject": "imgUpload"
+  "defaultProject": "imgUpload",
+  "cli": {
+    "analytics": "b87463dc-cebb-44a6-bc1a-124fd10df729"
+  }
 }

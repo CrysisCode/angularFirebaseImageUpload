@@ -11,9 +11,9 @@ import { AngularFireStorage } from '@angular/fire/compat/storage';
   styleUrls: ['./image.component.scss']
 })
 export class ImageComponent implements OnInit {
-  imgSrc: any;
-  selectedImage: any;
-  isSubmitted: boolean = true;
+  imgSrc!: string;
+  selectedImage: any = null;
+  isSubmitted!: boolean;
 
   formTemplate = new FormGroup({
     caption: new FormControl('', Validators.required),
